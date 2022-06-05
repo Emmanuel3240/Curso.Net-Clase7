@@ -13,7 +13,6 @@ do
     numero = int.Parse(Console.ReadLine());
     acumulador = acumulador + numero;
     promedio = acumulador / contador;
-    //Obtener numero mayor y menor
     if (contador == 1)
     {
         mayor = numero;
