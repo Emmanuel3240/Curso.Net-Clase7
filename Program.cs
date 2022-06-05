@@ -1,37 +1,33 @@
 ﻿Console.Clear();
-var contador = 0;
 var acumulador = 0;
-var numero=0;
+int[] numero = new int[10];
 var mayor = 0;
 var menor = 0;
 var promedio = 0;
 Console.WriteLine("A continuación ingrese 10 números");
-do
+for (var i = 0; i < 10; i++)
 {
-    contador++;
-    Console.WriteLine($"Ingrese el {contador}° número y presione ENTER: ");
-    numero = int.Parse(Console.ReadLine());
-    acumulador = acumulador + numero;
-    promedio = acumulador / contador;
-    if (contador == 1)
+    Console.WriteLine($"Ingrese el {i+1}° número: ");
+    numero[i] = int.Parse(Console.ReadLine());
+    acumulador += numero[i];
+    if (i == 0)
     {
-        mayor = numero;
-        menor = numero;
+        mayor = numero[i];
+        menor = numero[i];
     }
     else
     {
-        if (numero > mayor)
+        if (numero[i] > mayor)
         {
-            mayor = numero;
+            mayor = numero[i];
         }
-        if (numero < menor)
+        if (numero[i] < menor)
         {
-            menor = numero;
+            menor = numero[i];
         }
     }
 }
-while (contador < 10);
-
+promedio = acumulador / 10;
 Console.WriteLine($"La suma de todos los números ingresados es: {acumulador}");
 Console.WriteLine($"El número mayor ingresado es: {mayor}");
 Console.WriteLine($"El número menor ingresado es: {menor}");
